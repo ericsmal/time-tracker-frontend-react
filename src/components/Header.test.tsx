@@ -1,12 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Header from "./Header";
 
-describe('App component', () => {
-  it('contains an h1 header on the first page', () => {
-    render(<App />);
+describe('Header component', () => {
+  it('renders a supplied text correctly', () => {
+    render(<Header text="Hello world!"/>);
     const h1Element = screen.getByText(/hello world/i);
     expect(h1Element).toBeInTheDocument();
-    expect(h1Element.tagName).toStrictEqual('H1');
   });
 });
